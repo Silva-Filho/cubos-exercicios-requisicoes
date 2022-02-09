@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+
+        <title>Exercício 02 da aula 13 de Front-end.</title>
+
+        <link rel = "stylesheet" href = "style.css" />
+        <script src = "script.js" defer ></script>
+    </head>
+
+    <body>
+        <form action = "" method = "GET">
+            <div class = "form-infos">
+                <label for = "criptomoeda">Criptomoeda: </label> <br />
+
+                <select name = "criptomoeda" id = "criptomoeda" >
+                    <option value = "" select>Selecione uma criptomoeda</option>
+                    <option value = "BTC">Bitcoin</option>
+                    <option value = "ETH">Ethereum</option>
+                    <option value = "LTC">Litecoin</option>
+                </select>
+            </div>
+            
+            <p>Maior preço unitário negociado nas ultimas 24 horas: R$ <b class = "valor-moeda"></b> </p>
+            <p>Quantidade negociada nas ultimas 24 horas: <b class = "valor-qtde"></b> </p>
+            <p>Maior preço de oferta de compra nas ultimas 24 horas: R$ <b class = "valor-compra"></b></p>
+        </form>
+    </body>
+</html>
