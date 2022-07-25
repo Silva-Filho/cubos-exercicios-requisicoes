@@ -11,49 +11,71 @@ const limparInputValue = () => {
 };
 
 const mostrarDivErro = () => {
-    const temEscondidoDiv = divErroInfo.classList.contains("escondido");
+    const temEscondidoDiv = divErroInfo?.classList.contains("escondido");
 
     if (temEscondidoDiv) {
-        divErroInfo.classList.remove("escondido");
+        divErroInfo?.classList.remove("escondido");
+    }
+};
+
+const mostrarMensagemErro = nome => {
+    const mensagemErroCepQtdeDigitos = pErroCepQtdeDigitos?.classList.contains("escondido");
+    const mensagemErroCepInexistente = pErroCepInexistente?.classList.contains("escondido");
+
+    mostrarDivErro();
+
+    if ( nome.id === "erro-qtde-digitos") {
+        pErroCepQtdeDigitos?.classList.remove("escondido");
+
+        if (!mensagemErroCepInexistente) {
+            pErroCepInexistente?.classList.add("escondido");
+        }
+    } else {
+        if (!mensagemErroCepQtdeDigitos) {
+            pErroCepQtdeDigitos?.classList.add("escondido");
+        }
+    
+        pErroCepInexistente?.classList.remove("escondido");
     }
 };
 
 const mostrarErroCepQtdeDigitos = () => {
-    const temEscondidoP = pErroCepInexistente.classList.contains("escondido");
+    const temEscondidoP = pErroCepInexistente?.classList.contains("escondido");
 
     mostrarDivErro();
 
-    pErroCepQtdeDigitos.classList.remove("escondido");
+    pErroCepQtdeDigitos?.classList.remove("escondido");
 
     if (!temEscondidoP) {
-        pErroCepInexistente.classList.add("escondido");
+        pErroCepInexistente?.classList.add("escondido");
     }
 };
 
 const mostrarErroCepInexistente = () => {
-    const temEscondidoP = pErroCepQtdeDigitos.classList.contains("escondido");
+    const temEscondidoP = pErroCepQtdeDigitos?.classList.contains("escondido");
 
     mostrarDivErro();
 
     if (!temEscondidoP) {
-        pErroCepQtdeDigitos.classList.add("escondido");
+        pErroCepQtdeDigitos?.classList.add("escondido");
     }
 
-    pErroCepInexistente.classList.remove("escondido");
+    pErroCepInexistente?.classList.remove("escondido");
 };
 
 const obterDados = corpo => {
-    console.log(corpo.erro);
-    console.log(corpo);
+    /* console.log(corpo.erro); */
+    /* console.log(corpo); */
     if (!corpo.erro) {
-        divErroInfo.classList.add("escondido");
+        divErroInfo?.classList.add("escondido");
         
         cidadeInput.value = corpo.localidade;
         ruaInput.value = corpo.logradouro + " - " + corpo.bairro;
         return;
     }
 
-    mostrarErroCepInexistente();
+    /* mostrarErroCepInexistente(); */
+    mostrarMensagemErro(pErroCepInexistente);
 
     limparInputValue();
 };
@@ -78,10 +100,10 @@ const obterInfosCep = () => {
         return;
     }
     
-    mostrarErroCepQtdeDigitos();
+    /* mostrarErroCepQtdeDigitos(); */
+    mostrarMensagemErro(pErroCepQtdeDigitos);
 
     limparInputValue();
 };
 
-cepInput.addEventListener("change", obterInfosCep);
-
+cepInput?.addEventListener("change", obterInfosCep);
