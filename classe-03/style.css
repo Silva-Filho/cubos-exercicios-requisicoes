@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:focus {
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    background-color: #eee;
+}
+
+.container {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #ddd;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 3rem;
+    align-self: center;
+}
+
+select {
+    max-width: 20rem;
+    align-self: center;
+    font-size: 1.4rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #eee;
+    border: none;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+img {
+    max-width: 300px;
+    max-height: 250px;
+}
+
+p {
+    font-size: 1.4rem;
+}
